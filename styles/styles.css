@@ -84,6 +84,10 @@ header {
     border-radius: 5px;
 }
 
+.dsdividas-form-control:hover {
+    background-color: #384459;
+}
+
 
 .dsdividas-container {
     width: 100%;
@@ -155,7 +159,7 @@ header {
     display: none;
 }
 
-.show992px{
+.show992px {
     display: none;
 }
 
@@ -164,21 +168,21 @@ header {
         display: table-cell;
     }
 
-    .dsdividas-card{
+    .dsdividas-card {
         padding: 35px;
     }
 
-    .dsdividas-debts-table tbody tr{
+    .dsdividas-debts-table tbody tr {
         height: 62px;
     }
 
-    .dsdividas-debts-table tbody{
+    .dsdividas-debts-table tbody {
         font-size: 18px;
     }
-} 
+}
 
-@media (min-width: 992px){
-    .show992px{
+@media (min-width: 992px) {
+    .show992px {
         display: table-cell;
     }
 }
