@@ -1,0 +1,15 @@
+.dsdividas-red-btn {
+    height: 45px;
+    width: 45px;
+    background: rga(225, 104, 114, 0.1);
+    border: 1px solid #ff6b72;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dsdividas-red-btn img {
+    width: 19px;
+}
