@@ -1,13 +1,188 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+html {
+    background-color: #000;
+    color: #FFF;
+}
+
+a,
+a:hover,
+a:visited {
+    color: unset;
+    text-decoration: none;
+}
+
+header {
+    height: 220px;
+    background: linear-gradient(180deg, #102347 0%, #181818 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dsdividas-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dsdividas-logo-container img {
+    /* width: 235px; */
+    width: 135px;
+}
+
+.dsdividas-logo-container h1 {
+    /* margin-top: 15px; */
+    margin-top: 6px;
+    font-size: 24px;
+}
+
+.dsdividas-logo-container p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+#debts {
+    padding: 40px 10px;
+}
+
+.dsdividas-debts-title {
+    color: #676fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.dsdividas-debts-subtitle {
+    color: #676fff;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.dsdividas-form-control-container {
+    margin-bottom: 16px;
+    max-width: 300px;
+}
+
+.dsdividas-form-control {
+    width: 100%;
+    height: 46px;
+    padding: 0 20px;
+    font-size: 18px;
+    background-color: #1b2531;
+    color: #9aaabe;
+    border: 1px solid #384459;
+    border-radius: 5px;
+}
+
+.dsdividas-form-control:hover {
+    background-color: #384459;
+}
+
+
+.dsdividas-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dsdividas-card {
+    background-color: #283142;
+    border-radius: 10px;
+    padding: 30px 10px;
+}
+
+.dsdividas-debts-table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.dsdividas-debts-table thead {
+    height: 55px;
+    font-size: 16px;
+    color: #e9e9e9;
+    font-weight: 700;
+}
+
+.dsdividas-debts-table tbody {
+    font-size: 14px;
+    font-weight: 400;
+    color: #cfcfcf;
+    text-align: center;
+}
+
+.dsdividas-debts-table tbody tr {
+    height: 74px;
+    border-top: 1px solid #5f6e82;
+}
+
+.dsdividas-debts-table tbody tr:hover>td {
+    background-color: #384459;
+}
+
+.dsdividas-debts-table tbody tr:nth-child(odd) {
+    background-color: #242c3b;
+}
+
+.dsdividas-red-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.dsdividas-red-btn {
+    height: 45px;
+    width: 45px;
+    background: rga(225, 104, 114, 0.1);
+    border: 1px solid #ff6b72;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dsdividas-red-btn img {
+    width: 19px;
+}
+
+.show576px {
+    display: none;
+}
+
+.show992px {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .show576px {
+        display: table-cell;
+    }
+
+    .dsdividas-card {
+        padding: 35px;
+    }
+
+    .dsdividas-debts-table tbody tr {
+        height: 62px;
+    }
+
+    .dsdividas-debts-table tbody {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    .show992px {
+        display: table-cell;
+    }
 }
