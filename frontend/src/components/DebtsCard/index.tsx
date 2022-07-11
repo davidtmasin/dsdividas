@@ -1,3 +1,5 @@
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
 import NotificationButton from '../NotificationButton'
 import './styles.css'
 
@@ -9,10 +11,22 @@ function DebtsCard() {
                 <h3 className="dsdividas-debts-subtitle">Escolha um período (Início - Fim)</h3>
                 <div>
                     <div className="dsdividas-form-control-container">
-                        <input className="dsdividas-form-control" type="date" title="Data inicial" />
+                        <DatePicker
+                            selected={new Date()}
+                            onChange={(date: Date) => { }}
+                            className="dsdividas-form-control"
+                            dateFormat="dd/MM/yyyy"
+                            title="Data de início"
+                        />
                     </div>
                     <div className="dsdividas-form-control-container">
-                        <input className="dsdividas-form-control" type="date" title="Data final" />
+                        <DatePicker
+                            selected={new Date()}
+                            onChange={(date: Date) => { }}
+                            className="dsdividas-form-control"
+                            dateFormat="dd/MM/yyyy"
+                            title="Data de fim"
+                        />
                     </div>
                 </div>
 
