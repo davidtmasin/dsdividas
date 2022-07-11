@@ -1,9 +1,19 @@
+import { useState } from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import NotificationButton from '../NotificationButton'
 import './styles.css'
 
 function DebtsCard() {
+
+    const min = new Date(new Date().setDate(new Date().getDate() - 365))
+    const max = new Date();
+
+    const [minDate, setMinDate] = useState(min)
+    const [maxDate, setMaxDate] = useState(max)
+
+
+
     return (
         <>
             <div className="dsdividas-card">
@@ -12,8 +22,8 @@ function DebtsCard() {
                 <div>
                     <div className="dsdividas-form-control-container">
                         <DatePicker
-                            selected={new Date()}
-                            onChange={(date: Date) => { }}
+                            selected={minDate}
+                            onChange={(date: Date) => setMinDate(date)}
                             className="dsdividas-form-control"
                             dateFormat="dd/MM/yyyy"
                             title="Data de início"
@@ -21,8 +31,8 @@ function DebtsCard() {
                     </div>
                     <div className="dsdividas-form-control-container">
                         <DatePicker
-                            selected={new Date()}
-                            onChange={(date: Date) => { }}
+                            selected={maxDate}
+                            onChange={(date: Date) => setMaxDate(date)}
                             className="dsdividas-form-control"
                             dateFormat="dd/MM/yyyy"
                             title="Data de fim"
