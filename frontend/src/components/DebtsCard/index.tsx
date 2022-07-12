@@ -1,6 +1,12 @@
 import { useState } from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
+
+import { registerLocale, setDefaultLocale } from  "react-datepicker"
+import ptBR from 'date-fns/locale/pt-BR'    
+registerLocale('ptBR', ptBR)
+setDefaultLocale('ptBR')
+
 import NotificationButton from '../NotificationButton'
 import './styles.css'
 
