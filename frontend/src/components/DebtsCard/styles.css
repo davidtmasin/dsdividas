@@ -1,13 +1,13 @@
 .dsdividas-card {
     background-color: #283142;
     border-radius: 10px;
-    padding: 30px 10px;
+    padding: 25px 10px;
 }
 
 .dsdividas-debts-title {
     color: #676fff;
     font-size: 24px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .dsdividas-debts-subtitle {
@@ -32,6 +32,37 @@
     border: 1px solid #384459;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.dsdividas-debts-title-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+
+
+.dsdividas-actual-date-container{
+    max-width: 140px;
+}
+
+.dsdividas-actual-date{
+    width: 100%;
+    height: 36px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+    /* background-color: #1b2531; */
+    background-color: transparent;
+    color: #abb7c7;
+    /* border: 1px solid #384459; */
+    border: 1px solid #384459;
+    border-radius: 5px;
+}
+
+.dsdividas-actual-date:hover{
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) .8s;
+    filter: brightness(4);
 }
 
 .dsdividas-form-control:hover {

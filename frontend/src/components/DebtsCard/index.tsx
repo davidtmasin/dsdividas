@@ -2,8 +2,8 @@ import { useState } from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
-import { registerLocale, setDefaultLocale } from  "react-datepicker"
-import ptBR from 'date-fns/locale/pt-BR'    
+import { registerLocale, setDefaultLocale } from "react-datepicker"
+import ptBR from 'date-fns/locale/pt-BR'
 registerLocale('ptBR', ptBR)
 setDefaultLocale('ptBR')
 
@@ -12,7 +12,7 @@ import './styles.css'
 
 function DebtsCard() {
 
-    const min = new Date(new Date().setDate(new Date().getDate() - 365))
+    const min = new Date(new Date().setDate(new Date().getDate() - 2))
     const max = new Date();
 
     const [minDate, setMinDate] = useState(min)
@@ -23,7 +23,20 @@ function DebtsCard() {
     return (
         <>
             <div className="dsdividas-card">
-                <h2 className="dsdividas-debts-title">Dívidas</h2>
+                <div className="dsdividas-debts-title-container">
+                    <h2 className="dsdividas-debts-title">Dívidas</h2>
+                    
+                    <div className="dsdividas-actual-date-container">
+                        <DatePicker
+                            selected={new Date()}
+                            onChange={(date: Date) => { }}
+                            className="dsdividas-actual-date"
+                            dateFormat="dd/MM/yyyy"
+                            title="Data do dia"
+                            disabled
+                        />
+                    </div>
+                </div>
                 <h3 className="dsdividas-debts-subtitle">Escolha um período (Início - Fim)</h3>
                 <div>
                     <div className="dsdividas-form-control-container">
