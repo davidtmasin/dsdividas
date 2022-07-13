@@ -12,12 +12,13 @@ import './styles.css'
 
 function DebtsCard() {
 
-    const min = new Date(new Date().setDate(new Date().getDate() - 2))
-    const max = new Date();
+    const min = new Date(new Date().setDate(new Date().getDate() - 30))
+    const max = new Date(new Date().setDate(new Date().getDate() + 30))
+    const today = new Date();
 
     const [minDate, setMinDate] = useState(min)
     const [maxDate, setMaxDate] = useState(max)
-
+    const [actualDate, setActualDate] = useState(today)
 
 
     return (
@@ -28,12 +29,12 @@ function DebtsCard() {
                     
                     <div className="dsdividas-actual-date-container">
                         <DatePicker
-                            selected={new Date()}
-                            onChange={(date: Date) => { }}
+                            selected={actualDate}
+                            onChange={(date: Date) => setActualDate(date)}
                             className="dsdividas-actual-date"
                             dateFormat="dd/MM/yyyy"
                             title="Data do dia"
-                            disabled
+                            readOnly
                         />
                     </div>
                 </div>
