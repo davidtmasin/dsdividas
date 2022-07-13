@@ -1,0 +1,16 @@
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Aluguel','Fixa',01,550.00,'2022-08-10');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Internet','Fixa',01,74.65,'2022-08-10');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Ajuda de custo','Fixa',01,200.00,'2022-08-01');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Dinheiro de casa','Fixa',01,200.00,'2022-08-01');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Cartão de crédito 01','Variável',01,552.97,'2022-08-06');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Cartão de crédito 02','Variável',01,991.27,'2022-08-06');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Empréstimo','Eventual',05,233.00,'2022-08-06');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Cartão Renner','Fixa',02,103.06,'2022-08-06');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Plano de Saúde','Fixa',12,213.00,'2022-08-10');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Seguro veicular','Fixa',10,74.00,'2022-08-10');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Celular Xiaomi Redmi 10','Eventual',05,200.00,'2022-08-01');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Diego - Cell novo','Variável',04,70.00,'2022-08-10');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('oBoticário pack_01','Fixa',03,124.00,'2022-08-07');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Escola da Sophia','Fixa',12,350.00,'2022-08-01');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('IPVA','Eventual',01,100.00,'2023-01-01');
+INSERT INTO tb_debts(description,expense_type,parcel_number,amount,date) VALUES ('Licenciamento','Eventual',01,165.59,'2023-05-10');
