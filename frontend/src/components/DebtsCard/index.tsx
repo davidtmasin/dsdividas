@@ -12,8 +12,8 @@ import './styles.css'
 
 function DebtsCard() {
 
-    const min = new Date(new Date().setDate(new Date().getDate() - 30))
-    const max = new Date(new Date().setDate(new Date().getDate() + 30))
+    const min = new Date(new Date().setDate(new Date().getDate() - 10))
+    const max = new Date(new Date().setDate(new Date().getDate() + 10))
     const today = new Date();
 
     const [minDate, setMinDate] = useState(min)
