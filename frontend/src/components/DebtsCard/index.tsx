@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import axios from "axios"
+
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
@@ -20,13 +22,22 @@ function DebtsCard() {
     const [maxDate, setMaxDate] = useState(max)
     const [actualDate, setActualDate] = useState(today)
 
+    useEffect(() => {
+        axios.get('http://localhost:8080/debts')
+             .then(response => {
+                console.log(response.data);
+                
+            })
+        
+    }, [])
+
 
     return (
         <>
             <div className="dsdividas-card">
                 <div className="dsdividas-debts-title-container">
                     <h2 className="dsdividas-debts-title">Dívidas</h2>
-                    
+
                     <div className="dsdividas-actual-date-container">
                         <DatePicker
                             selected={actualDate}
