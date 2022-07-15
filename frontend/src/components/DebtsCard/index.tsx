@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
+import { BASE_URL } from "../../utils/request"
+
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
@@ -11,6 +13,7 @@ setDefaultLocale('ptBR')
 
 import NotificationButton from '../NotificationButton'
 import './styles.css'
+import { Debt } from "../../models/debt"
 
 function DebtsCard() {
 
@@ -22,13 +25,13 @@ function DebtsCard() {
     const [maxDate, setMaxDate] = useState(max)
     const [actualDate, setActualDate] = useState(today)
 
+    const [debts, setDebts] = useState<Debt[]>([])
+
     useEffect(() => {
-        axios.get('http://localhost:8080/debts')
-             .then(response => {
-                console.log(response.data);
-                
+        axios.get(`${BASE_URL}/debts`)
+            .then(response => {                
+                setDebts(response.data.content)
             })
-        
     }, [])
 
 
@@ -85,84 +88,29 @@ function DebtsCard() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="show992px">#666</td>
-                                <td className="show576px">12/12/2012</td>
-                                <td>Aluguel</td>
-                                <td className="show992px">Fixa</td>
-                                <td className="show992px">1</td>
-                                <td>R$ 550</td>
-                                <td>
-                                    <div className="dsdividas-red-btn-container">
-                                        <NotificationButton />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="show992px">#666</td>
-                                <td className="show576px">12/12/2012</td>
-                                <td>Aluguel</td>
-                                <td className="show992px">Fixa</td>
-                                <td className="show992px">1</td>
-                                <td>R$ 550</td>
-                                <td>
-                                    <div className="dsdividas-red-btn-container">
-                                        <NotificationButton />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="show992px">#666</td>
-                                <td className="show576px">12/12/2012</td>
-                                <td>Aluguel</td>
-                                <td className="show992px">Fixa</td>
-                                <td className="show992px">1</td>
-                                <td>R$ 550</td>
-                                <td>
-                                    <div className="dsdividas-red-btn-container">
-                                        <NotificationButton />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="show992px">#666</td>
-                                <td className="show576px">12/12/2012</td>
-                                <td>Aluguel</td>
-                                <td className="show992px">Fixa</td>
-                                <td className="show992px">1</td>
-                                <td>R$ 550</td>
-                                <td>
-                                    <div className="dsdividas-red-btn-container">
-                                        <NotificationButton />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="show992px">#666</td>
-                                <td className="show576px">12/12/2012</td>
-                                <td>Aluguel</td>
-                                <td className="show992px">Fixa</td>
-                                <td className="show992px">1</td>
-                                <td>R$ 550</td>
-                                <td>
-                                    <div className="dsdividas-red-btn-container">
-                                        <NotificationButton />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="show992px">#666</td>
-                                <td className="show576px">12/12/2012</td>
-                                <td>Aluguel</td>
-                                <td className="show992px">Fixa</td>
-                                <td className="show992px">1</td>
-                                <td>R$ 550</td>
-                                <td>
-                                    <div className="dsdividas-red-btn-container">
-                                        <NotificationButton />
-                                    </div>
-                                </td>
-                            </tr>
+                            {
+                                debts.map(debt => {
+                                    let amountTwoDecimals = debt.amount.toFixed(2)
+                                    let amountFormatted = amountTwoDecimals.replace('.', ',')
+
+                                    return (
+                                        <tr key={debt.id}>
+                                            <td className="show992px">#{(debt.id) < 10 ? (`0${debt.id}`) : (debt.id)}</td>
+                                            <td className="show576px">{new Date(debt.date).toLocaleDateString()}</td>
+                                            <td>{debt.description}</td>
+                                            <td className="show992px">{debt.expenseType}</td>
+                                            <td className="show992px">{(debt.parcelNumber) < 10 ? (`0${debt.parcelNumber}`) : (debt.parcelNumber)}</td>
+                                            <td>R$ {amountFormatted}
+                                            </td>
+                                            <td>
+                                                <div className="dsdividas-red-btn-container">
+                                                    <NotificationButton />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>
