@@ -101,7 +101,7 @@ function DebtsCard() {
 
                                     return (
                                         <tr key={debt.id}>
-                                            <td className="show992px">#{(debt.id) < 10 ? (`0${debt.id}`) : (debt.id)}</td>
+                                            <td className="show992px">{(debt.id) < 10 ? (`0${debt.id}`) : (debt.id)}</td>
                                             <td className="show576px">{new Date(debt.date).toLocaleDateString('pt-Br', {timeZone: 'UTC'})}</td>
                                             <td>{debt.description}</td>
                                             <td className="show992px">{debt.expenseType}</td>
