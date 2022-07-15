@@ -17,8 +17,8 @@ import { Debt } from "../../models/debt"
 
 function DebtsCard() {
 
-    const min = new Date(new Date().setDate(new Date().getDate() - 10))
-    const max = new Date(new Date().setDate(new Date().getDate() + 10))
+    const min = new Date(new Date().setDate(new Date().getDate() - 30))
+    const max = new Date(new Date().setDate(new Date().getDate() + 30))
     const today = new Date();
 
     const [minDate, setMinDate] = useState(min)
@@ -28,11 +28,17 @@ function DebtsCard() {
     const [debts, setDebts] = useState<Debt[]>([])
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/debts`)
+        const dmin = minDate.toISOString().slice(0, 10)
+        const dmax = maxDate.toISOString().slice(0, 10)
+        console.log(`Data mínima: ${dmin}`)
+        console.log(`Data máxima: ${dmax}`)
+                
+        axios.get(`${BASE_URL}/debts?minDate=${dmin}&maxDate=${dmax}`)
             .then(response => {                
                 setDebts(response.data.content)
+                console.log(response.data.content)
             })
-    }, [])
+    }, [minDate, maxDate])
 
 
     return (
@@ -96,7 +102,7 @@ function DebtsCard() {
                                     return (
                                         <tr key={debt.id}>
                                             <td className="show992px">#{(debt.id) < 10 ? (`0${debt.id}`) : (debt.id)}</td>
-                                            <td className="show576px">{new Date(debt.date).toLocaleDateString()}</td>
+                                            <td className="show576px">{new Date(debt.date).toLocaleDateString('pt-Br', {timeZone: 'UTC'})}</td>
                                             <td>{debt.description}</td>
                                             <td className="show992px">{debt.expenseType}</td>
                                             <td className="show992px">{(debt.parcelNumber) < 10 ? (`0${debt.parcelNumber}`) : (debt.parcelNumber)}</td>
