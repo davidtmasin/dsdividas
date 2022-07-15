@@ -22,8 +22,8 @@ public class DebtService {
 		
 		LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
 		
-		LocalDate min = minDate.equals("") ? today.minusDays(10) : LocalDate.parse(minDate);
-		LocalDate max = maxDate.equals("") ? today.plusDays(10) : LocalDate.parse(maxDate);
+		LocalDate min = minDate.equals("") ? today.minusDays(30) : LocalDate.parse(minDate);
+		LocalDate max = maxDate.equals("") ? today.plusDays(30) : LocalDate.parse(maxDate);
 		
 		return debtRepo.findDebts(min, max, pageable);
 	}
