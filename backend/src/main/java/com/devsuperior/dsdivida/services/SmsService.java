@@ -33,7 +33,6 @@ public class SmsService {
 	public void sendSms(Long debtId) {
 		
 		Debt debt = debtRepository.findById(debtId).get();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 //		String date = debt.getDate().getDayOfMonth() + "/" + debt.getDate().getMonthValue() + "/" + debt.getDate().getYear(); 
 		String date = (debt.getDate().getDayOfMonth() < 10 ? ("0" + debt.getDate().getDayOfMonth()) : (debt.getDate().getDayOfMonth()) ) + "/" 
 						+ (debt.getDate().getMonthValue() < 10 ? ("0" + debt.getDate().getMonthValue()) : (debt.getDate().getMonthValue()) ) + "/" 
