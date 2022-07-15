@@ -110,7 +110,7 @@ function DebtsCard() {
                                             </td>
                                             <td>
                                                 <div className="dsdividas-red-btn-container">
-                                                    <NotificationButton />
+                                                    <NotificationButton debtId={debt.id} />
                                                 </div>
                                             </td>
                                         </tr>
